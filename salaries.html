@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MPOTO - SALARIES</title><script src="https://cdn.tailwindcss.com"></script>
+<style>body{font-family:Arial;font-size:9px;background:#fff;margin:0} table{border-collapse:collapse;width:100%} th,td{border:1px solid #000;padding:3px;text-align:center;font-size:9px;min-width:60px} td:first-child{text-align:left;font-weight:700;background:#f8fafc;position:sticky;left:0;min-width:140px} input{width:100%;border:none;outline:none;text-align:center;font-size:9px;background:transparent} .yellow{background:#ffff00 !important}.green{background:#00b050 !important;color:#fff}</style>
+</head><body>
+<div style="display:flex;justify-content:space-between;padding:6px;background:#0f172a;color:#fff"><b>MPOTO - SALARIES - 10.10.2026 - ABIGAEL BRENDA EMMACULATE SHARON PETER NJERI BEN CHARLES DIANA EUNICE PERIS - Exact Photo - No Data Left</b><div><a href="index.html" style="background:#fff;color:#000;padding:3px 8px;border-radius:6px">Hub</a> <input type="date" id="start" value="2026-10-04" onchange="render()" style="color:#000;padding:2px;border-radius:6px"> <button onclick="addWeek()" style="background:#000;color:#fff;padding:3px 8px;border-radius:6px">+ Week</button></div></div>
+<div style="overflow:auto;max-height:92vh"><table id="tbl"></table></div>
+<script>
+let data=JSON.parse(localStorage.getItem('mp_sal_full')||'{}');
+const staff=["ABIGAEL MUTHAMA","BRENDA","EMMACULATE ACHIENG","SHARON","PETER","NJERI","BEN","CHARLES","DIANA","EUNICE","PERIS","TOTAL SALARY"];
+function fmt(d){const dd=String(d.getDate()).padStart(2,'0');const mm=String(d.getMonth()+1).padStart(2,'0');return `${dd}.${mm}.${d.getFullYear()}`;}
+function getDates(s){const a=[];const d=new Date(s);for(let i=0;i<7;i++){const n=new Date(d);n.setDate(d.getDate()+i);a.push(n);}return a;}
+function render(){
+const dates=getDates(document.getElementById('start').value||'2026-10-04');
+let h='<tr><th colspan="9" style="background:#00b050;color:#fff">SALARIES - 10.10.2026</th></tr>';
+h+='<tr><th style="text-align:left">NAME</th>';dates.forEach(dt=>{h+=`<th>${fmt(dt)}</th>`;});h+='<th>Total</th></tr>';
+staff.forEach(name=>{
+let tot=0;h+=`<tr><td style="text-align:left;font-weight:${name==='TOTAL SALARY'?'900':'700'};background:${name==='TOTAL SALARY'?'#ffff00':''}">${name}</td>`;dates.forEach(dt=>{const k=`sal_${name}_${fmt(dt)}`;const v=data[k];if(v && !isNaN(v) && name!=='TOTAL SALARY') tot+=Number(v);h+=`<td><input data-k="${k}" value="${data[k]||''}" oninput="data[this.dataset.k]=this.value;localStorage.setItem('mp_sal_full',JSON.stringify(data));render()"></td>`;});h+=`<td class="yellow">${name==='TOTAL SALARY'?'':(tot||'-')}</td></tr>`;
+});
+document.getElementById('tbl').innerHTML=h;
+}
+function addWeek(){const cur=new Date(document.getElementById('start').value);cur.setDate(cur.getDate()+7);document.getElementById('start').value=cur.toISOString().split('T')[0];render();}
+render();
+</script>
+</body></html>
