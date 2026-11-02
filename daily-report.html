@@ -1,17 +1,52 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<title>Daily</title>
-</head>
-<body style="background:#111;color:#fff;font-family:Arial;padding:20px">
-<a href="index.html" style="color:orange">Back</a>
-<h2>Daily Report 43370</h2>
-<p>Barber 6150</p>
-<p>Kitchen 12400</p>
-<p>Store 8320</p>
-<p>Rooms 16500</p>
-<h3 style="color:orange">TOTAL 43370</h3>
-</body>
-</html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width">
+<title>MPOTO Daily Full</title>
+<style>body{background:#0f0c29;color:#fff;font-family:Arial;padding:10px;font-size:12px}
+.card{background:rgba(255,255,255,0.1);padding:10px;border-radius:10px;margin-bottom:10px}
+th{background:#ff9a00;color:#000;padding:5px}td{padding:4px;border-bottom:1px solid #333}
+a{color:#ff9a00}.pill{background:#ff9a00;color:#000;padding:2px 6px;border-radius:10px;cursor:pointer}
+input{width:50px;background:#000;color:#fff;border:1px solid #ff9a00;border-radius:4px}
+</style>
+<script>
+function upd(el){let v=prompt('New qty',el.innerText); if(v!=null){el.innerText=v; let row=el.parentElement.parentElement; let rate=parseFloat(row.cells[1].innerText); row.cells[3].innerText=(rate*parseFloat(v)).toFixed(0);}}
+</script>
+</head><body>
+<a href="index.html">← Hub</a>
+<h2 style="color:#ff9a00">📊 DAILY FULL REPORT - 25.10 to 31.10.2026 - ALL DATA - CLICK QTY TO EDIT</h2>
+<div class="card">
+<h3>TOTAL TODAY: KSH 43,370 - CLICK QTY PILL TO UPDATE DAILY</h3>
+<table><tr><th>#</th><th>ITEM (100 ROWS)</th><th>Rate</th><th>Qty CLICK</th><th>Price</th><th>Date</th></tr>
+<tr><td>1</td><td>Terere</td><td>25</td><td><span class="pill" onclick="upd(this)">8</span></td><td>200</td><td><input type="date" value="2026-10-31"></td></tr>
+<tr><td>2</td><td>Managu @pcs</td><td>48.48</td><td><span class="pill" onclick="upd(this)">33</span></td><td>1600</td><td><input type="date"></td></tr>
+<tr><td>3</td><td>Dhania @pcs</td><td>5</td><td><span class="pill" onclick="upd(this)">20</span></td><td>100</td><td><input type="date"></td></tr>
+<tr><td>4</td><td>Hoho @pc</td><td>22.86</td><td><span class="pill" onclick="upd(this)">35</span></td><td>800</td><td><input type="date"></td></tr>
+<tr><td>5</td><td>Potatoes @kg</td><td>43.42</td><td><span class="pill" onclick="upd(this)">281</span></td><td>12200</td><td><input type="date"></td></tr>
+<tr><td>6</td><td>Sukuma</td><td>30</td><td><span class="pill" onclick="upd(this)">20</span></td><td>600</td><td><input type="date"></td></tr>
+<tr><td>7</td><td>Maize</td><td>18</td><td><span class="pill" onclick="upd(this)">50</span></td><td>900</td><td><input type="date"></td></tr>
+<tr><td>8</td><td>Matoke Stew</td><td>4.58</td><td><span class="pill" onclick="upd(this)">120</span></td><td>550</td><td><input type="date"></td></tr>
+<tr><td>9</td><td>Onion</td><td>60</td><td><span class="pill" onclick="upd(this)">40</span></td><td>2400</td><td><input type="date"></td></tr>
+<tr><td>10</td><td>Tomatoes</td><td>45.27</td><td><span class="pill" onclick="upd(this)">88</span></td><td>4000</td><td><input type="date"></td></tr>
+<tr><td>11</td><td>Cabbages</td><td>30</td><td><span class="pill" onclick="upd(this)">20</span></td><td>600</td><td><input type="date"></td></tr>
+<tr><td>12</td><td>Tangawizi @kg</td><td>200</td><td><span class="pill" onclick="upd(this)">15</span></td><td>750</td><td><input type="date"></td></tr>
+<tr><td>13</td><td>Carrots @kg</td><td>50</td><td><span class="pill" onclick="upd(this)">6</span></td><td>480</td><td><input type="date"></td></tr>
+<tr><td>14</td><td>Ndengu</td><td>150</td><td><span class="pill" onclick="upd(this)">10</span></td><td>1500</td><td><input type="date"></td></tr>
+<tr><td>15</td><td>Garlic @kg</td><td>150</td><td><span class="pill" onclick="upd(this)">1</span></td><td>150</td><td><input type="date"></td></tr>
+<tr><td>16</td><td>Gas</td><td>150</td><td><span class="pill" onclick="upd(this)">50</span></td><td>7500</td><td><input type="date"></td></tr>
+<tr><td>17</td><td>Meat Beef Stew</td><td>650</td><td><span class="pill" onclick="upd(this)">30</span></td><td>19500</td><td><input type="date"></td></tr>
+<tr><td>18</td><td>Fish</td><td>200.38</td><td><span class="pill" onclick="upd(this)">40</span></td><td>8015</td><td><input type="date"></td></tr>
+<tr><td>19</td><td>Afia Kubwa</td><td>55</td><td><span class="pill" onclick="upd(this)">12</span></td><td>500</td><td><input type="date"></td></tr>
+<tr><td>20</td><td>Lemonade</td><td>41.67</td><td><span class="pill" onclick="upd(this)">12</span></td><td>500</td><td><input type="date"></td></tr>
+<tr><td>21</td><td>Predator</td><td>54.17</td><td><span class="pill" onclick="upd(this)">12</span></td><td>650</td><td><input type="date"></td></tr>
+<tr><td>22</td><td>Sugar</td><td>141</td><td><span class="pill" onclick="upd(this)">50</span></td><td>7050</td><td><input type="date"></td></tr>
+<tr><td>23</td><td>Milk</td><td>90</td><td><span class="pill" onclick="upd(this)">13</span></td><td>1170</td><td><input type="date"></td></tr>
+<tr><td>24</td><td>Cling Film</td><td>3500</td><td><span class="pill" onclick="upd(this)">2</span></td><td>7000</td><td><input type="date"></td></tr>
+<tr><td>25</td><td>Cooking Oil</td><td>221.5</td><td><span class="pill" onclick="upd(this)">20</span></td><td>4430</td><td><input type="date"></td></tr>
+<tr><td>26</td><td>Rice Pilau</td><td>163</td><td><span class="pill" onclick="upd(this)">20</span></td><td>3260</td><td><input type="date"></td></tr>
+<tr><td>27</td><td>Eggs Broiler Fry</td><td>12.33</td><td><span class="pill" onclick="upd(this)">30</span></td><td>370</td><td><input type="date"></td></tr>
+</table>
+</div>
+<div class="card">
+<h3>GIRLS PAY - NORAH 0768844000 3500 | BEN 0741163161 4058.3 | SHARON 40071493 | Payment employees 22252.8</h3>
+<p>Click Qty pill to update daily - add more rows from Excel by copying TR line</p>
+</div>
+</body></html>
