@@ -1,50 +1,75 @@
-# 🏢 MPOTO INVESTMENTS - Hotel Management System 2026
+# MPOTO INVESTMENTS 2026
+### Hotel Management System - Full Excel Data Integration
 
-Full functional hotel management system built from 2026 Excel data - NO detail left behind.
-Built for **MPOTO INVESTMENTS GROUP** (FoodPoint / Mpoto / Ndenderu / Salon / Bar)
+**Live App:** https://wycliffe36.github.io/mpoto-investments-2026/
 
-## ✨ Cool Neon Interface
-- Dark gradient: #0f0c29 → #302b63 → #24243e
-- Neon accents: Orange #ff9a00, Pink #ff006a, Cyan #00f5ff, Lime #7cff00
-- Glassmorphism cards, pill chips, sticky header
-- Fully offline, installable as desktop app
+---
 
-## 📦 What's Inside (From Your Excel - Nothing Left Out)
+## 🏨 Modules (8 Pages)
 
-**30 Barber / Salon Services:**
-Beard 100, Full head Plus Beard 200, Beard Dye 200, Soft n Free 300, Black Shampoo 300, Cream of Nature 500, Half Head Dye 200, Nail Cut 200, Cut 100, Face Scrub 200, Steaming 300, Masking 300, Full Facial 800, Pedicure 500, Manicure 500, Nail Polish 200, Gel 500, Body Scrub 1000, Full Body Massage 1500, Half Body Massage 800, Kids Shave 100, Head Wash 100, Wash and Blow Dry 200, Hair Relaxing 600, Back Massage 400 etc.
+**Neon Dark UI - Full Excel Data - No Backend Needed**
 
-**50+ Drinks SKUs:**
-Afya kubwa, Afya Ndogo, All Seasons 250ml, Amarula 375ml, Azam, Baileys 375ml, Balozi can, Best whisky 250ml, Best Gin 250ml, Chrome vodka 250ml, County 250ml, Dasani, Faxe, Four Cousins, Grants, Gilbeys, Gordons, Guinness, Hunters, Imperial, Jameson, Kane Extra, Keg black, Kenya cane, Kibao, Kilimanjaro, KO, Konyagi, Maji, Manyatta, Minutes maid, Monster, Napoleon Gold, Novida, Origin, Pilsner, Predator, Red bull, Safari lager, Smirnoff, Soda, Tanqueray, Tusker, VATS69, Viceroy, White cap, Palmall Cigarettes, Safari Cigarettes
+1. **💈 Barber Shop** - `barber-shop.html`
+   - 30 Services (Haircut, Shave, Dye, Spa)
+   - Daily tracking, Prices KSH
 
-**34 Foods:**
-Chapati, Mandazi, Maharagwe, Chipoo, Chips Masala, Chips Nyama, Matoke Stew, Matoke Fry, Matumbo Fry, Matumbo Stew, Beef Stew, Beef Fry, Sausages, Smokie, Kuku kienyeji, Kuku Broiler, Samaki, Eggs Kienyeji, Kienyeji Scrabble, Eggs Broiler, Broiler Scrabble, Kahawa, chai, Mkate/Bread, Pilau, Mchele, Ugali, Rice choma, Githeri, Andazi choma, Chapo choma, Matoke beef, Matoke beans, Matoke rice
+2. **📊 Daily Report** - `daily-report.html`
+   - Total: 43,370 KSH
+   - Staff attendance + Roles
 
-**Staff (12):**
-CHARLES, DIANA, EUNICE, PERIS, ABIGAEL MUTHAMA, BRENDA, EMMACULATE ACHIENG, NORAH, BEN, SHARON, PETER, NJERI
+3. **🥬 Kitchen Supply** - `kitchen-supply.html`
+   - Market prices, Vegetables, Meat
+   - Supplier tracking
 
-**Sheets Replicated:**
-- FOODPOINT SALES SHEET: SALES, TILL AMOUNT, CASH AMOUNT, EXPENSES, SHORTAGE, NGUI TILL
-- DAILY REPORT: MANAGER PROJECTION 245254, KITCHEN PROJECTION 186980, DRINKS SALES, TOTAL SALES, AMOUNT COLLECTED, EXPENCES, SHORTAGE, NGUI PAYMENT, STAFF MEAL, CHEF SHORTAGE, MANAGER SHORTAGES
-- CHAI PROFIT: Milk 1600 + Sugar 390 + Tea 25 + Gas 91.66 + Labour 41.66 + Chefs 576 + Rent 62.5 + Elec 5 + Water 5 + Managers 141.66 = 2938.5 cost, Profit 1261.5 (2L) / 1861.5 (Thermos)
-- KITCHEN INVENTORY: MARKET, BUTCHERY, POULTRY, SUPERMARKET, SERVICE STATION, STORE PURCHASES
-- SALARIES: FOODPINT SALARY, SALOON SALARY, Wages Total, MANAGERS SALES/COLLECTION
-- SUM REPORTS: APRIL 26 SUM to DEC 26 SUM
+4. **🏪 Store Supplies** - `store-supplies.html`
+   - Drinks 50+ SKUs
+   - Stock in/out
 
-## 💻 How to Install on Laptop (Desktop Software)
+5. **🧾 Sales Sheet** - `sales-sheet.html`
+   - Till balance, Expenses, Profit
 
-**Fastest:**
-1. Download `index.html`
-2. Double-click → Works 100% offline
+6. **🍛 Staff Meal** - `staff-meal.html`
+   - 12 Staff members, Daily meals
 
-**Install as Real App:**
-1. Open `index.html` in Chrome or Edge
-2. Top-right address bar → Install icon OR 3 dots menu → Save and share → Install page as app
-3. Now you have MPOTO INVESTMENTS icon on Desktop and Start Menu
+7. **👩 Wiky Peris Projects** - `wiky-peris.html`
+   - Tasks, Progress tracking
 
-## 🌐 GitHub Pages Live
-Repo: `mpoto-investments-2026`
-Live link: https://wycliffe36.github.io/mpoto-investments-2026/
+8. **💰 Salaries + Profit** - `salaries.html`
+   - CHAI & Milk profit calculation
+   - Salary distribution
 
-## 👤 Author
-wycliffe36 - MPOTO INVESTMENTS 2026 - Nairobi, Kenya
+---
+
+## 🚀 How to Use
+
+1. Open Live Link
+2. Click any card (8 modules)
+3. Edit data directly - auto saves in browser
+4. Print / Export to Excel
+
+## ✨ Features
+
+- Dark Gradient + Glassmorphism UI
+- Neon Orange Accents #ff9a00
+- Responsive - Works on Phone
+- No Login Required
+- All Data from Original Excel Sheets
+
+## 📁 Files
+
+- `index.html` - HUB (Main)
+- `barber-shop.html`
+- `daily-report.html`
+- `kitchen-supply.html`
+- `store-supplies.html`
+- `sales-sheet.html`
+- `staff-meal.html`
+- `wiky-peris.html`
+- `salaries.html`
+- `.nojekyll` - Forces GitHub Pages to show index
+
+---
+
+**Owner:** Wycliffe36  
+**Year:** 2026  
+**Location:** Nairobi, KE
