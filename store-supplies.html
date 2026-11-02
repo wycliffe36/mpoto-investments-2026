@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MPOTO - STORE SUPPLIES</title><script src="https://cdn.tailwindcss.com"></script>
+<style>body{font-family:Arial;font-size:8px;background:#fff;margin:0} table{border-collapse:collapse;width:100%} th,td{border:1px solid #000;padding:2px;text-align:center;font-size:8px;min-width:50px} td:first-child{text-align:left;font-weight:700;background:#f8fafc;position:sticky;left:0;min-width:140px} input{width:100%;border:none;outline:none;text-align:center;font-size:8px;background:transparent} .yellow{background:#ffff00 !important}.grey{background:#d9d9d9 !important}.green{background:#d9f0b1 !important}.red{color:#ff0000}</style>
+</head><body>
+<div style="display:flex;justify-content:space-between;padding:6px;background:#0f172a;color:#fff"><b>MPOTO - STORE SUPPLIES - Wk-closing yellow + Wk total + Rate + Amount - Exact Photo</b><div><a href="index.html" style="background:#fff;color:#000;padding:3px 8px;border-radius:6px">Hub</a> <input type="date" id="start" value="2026-10-04" onchange="render()" style="color:#000;padding:2px;border-radius:6px"> <button onclick="addWeek()" style="background:#000;color:#fff;padding:3px 8px;border-radius:6px">+ Week</button></div></div>
+<div style="overflow:auto;max-height:92vh"><table id="tbl"></table></div>
+<script>
+let data=JSON.parse(localStorage.getItem('mp_store_full')||'{}');
+const items=[{c:'MARKET',h:true},{i:'Terere',r:25},{i:'Managu @pcs',r:48.48},{i:'Dhania @pcs',r:5},{i:'Hoho @pc',r:22.86},{i:'Potatoes @kg',r:43.42},{i:'Maize',r:18},{i:'Raw Banana',r:4.58},{i:'Onion',r:60},{i:'Tomatoes',r:45.27},{i:'Cabbages',r:30},{i:'Beans @Kg',r:155},{i:'Njahi @Kg',r:95},{i:'Tangawizi @Kg',r:200},{i:'Carrots @Kg',r:50},{i:'Lemon',r:80},{i:'Pepper',r:80},{i:'Ndengu',r:150},{i:'Garlic @kg 430',r:150},{c:'SERVICE STATION',h:true},{i:'Gas',r:150},{c:'BUTCHERY',h:true},{i:'Meat Beef',r:650},{i:'Fish',r:200.88},{i:'Afia Kubwa',r:55},{i:'Afia Ndogo',r:250},{i:'Energy Drink',r:30},{i:'Lemonade',r:41.67},{i:'Predator',r:54.17},{i:'Maji Kubwa',r:42},{i:'Maji Ndogo',r:35},{i:'Soda Kubwa',r:250},{i:'Soda ndogo',r:90},{i:'Eggs Broiler',r:12.33},{i:'Sugar',r:141.9},{i:'Milk',r:90},{i:'Mkate/ Bread',r:63},{i:'Cooking Oil @litre',r:221.5},{i:'Cling Film',r:3500},{i:'Tissue @ pcs',r:33.75}];
+function fmt(d){const dd=String(d.getDate()).padStart(2,'0');const mm=String(d.getMonth()+1).padStart(2,'0');return `${dd}.${mm}.${d.getFullYear()}`;}
+function getDates(s){const a=[];const d=new Date(s);for(let i=0;i<7;i++){const n=new Date(d);n.setDate(d.getDate()+i);a.push(n);}return a;}
+function render(){
+const dates=getDates(document.getElementById('start').value||'2026-10-04');
+let h='<tr><th class="green" style="text-align:left">STORE SUPPLIES</th>';dates.forEach(dt=>{h+=`<th class="green">${fmt(dt)}</th>`;});h+='<th class="yellow">Wk-closing</th><th>Wk total</th><th>Rate</th><th>Amount</th></tr>';
+h+='<tr><th>MARKET</th>';dates.forEach(()=>{h+='<th></th>';});h+='<th class="yellow"></th><th></th><th></th><th></th></tr>';
+items.forEach(row=>{
+if(row.h){if(row.c==='MARKET') return;h+=`<tr><td style="background:#f0f0f0;font-weight:900">${row.c}</td>`;dates.forEach(()=>{h+='<td></td>';});h+='<td class="yellow"></td><td class="grey"></td><td class="grey"></td><td>-</td></tr>';return;}
+const base=row.i.replace(/[^a-z0-9]/gi,'_');
+let tot=0;dates.forEach(dt=>{const k=`s_${base}_${fmt(dt)}`;const v=data[k];if(v && !isNaN(v)) tot+=Number(v);});
+h+=`<tr><td style="text-align:left">${row.i}</td>`;dates.forEach(dt=>{const k=`s_${base}_${fmt(dt)}`;h+=`<td><input data-k="${k}" value="${data[k]||''}" oninput="data[this.dataset.k]=this.value;localStorage.setItem('mp_store_full',JSON.stringify(data));render()"></td>`;});const ck=`s_${base}_close`;h+=`<td class="yellow"><input data-k="${ck}" value="${data[ck]||''}" oninput="data[this.dataset.k]=this.value;localStorage.setItem('mp_store_full',JSON.stringify(data))"></td><td class="grey">${tot||0}</td><td class="grey red">${row.r||''}</td><td>${row.r && tot ? (tot*Number(row.r)).toFixed(2) : '-'}</td></tr>`;
+});
+document.getElementById('tbl').innerHTML=h;
+}
+function addWeek(){const cur=new Date(document.getElementById('start').value);cur.setDate(cur.getDate()+7);document.getElementById('start').value=cur.toISOString().split('T')[0];render();}
+render();
+</script>
+</body></html>
